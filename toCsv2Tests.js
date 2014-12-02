@@ -28,13 +28,16 @@ var fixture = {
 	
 	var text = toCsv(list);
 	
+	print(text);
+	
 	var lines = text.split('\r\n');
 	assert.areEqual(2, lines.length);	
-	assert.areEqual("name,age", lines[0]);	
-	assert.areEqual("dave,31", lines[1]);	
+	assert.areEqual("name,address.road,address.postcode", lines[0]);	
+	assert.areEqual("dave,theRoad,thePostcode", lines[1]);	
   }
 };
 
 var runner = new ecmaUnit.Runner();
+//var options = {runSingleTest: "subDocumentToCsv"};
 var result = runner.run(fixture);
 print(result.stringify());
