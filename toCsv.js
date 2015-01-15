@@ -72,5 +72,5 @@ function toCsv(list){
 		lines.push(getRow(item));
 	});
 	
-	return lines.join('\r\n');
+	return lines.join('\n');
 }
